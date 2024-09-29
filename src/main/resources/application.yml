@@ -1,0 +1,33 @@
+server:
+  port: 7077
+## spring data source
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: Admin123!
+  session:
+    jdbc:
+      initialize-schema: always
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  jackson:
+    serialization:
+      write-date-keys-as-timestamps: false
+    time-zone: UTC
+  application:
+    name: 'zero_one_demo'
+springdoc:
+  api-docs:
+    enabled: true
+    path: "/v1-docs/api"
+  swagger-ui:
+    path: "/v1-docs/swagger-ui.html"
+    operations-sorter: method
+
